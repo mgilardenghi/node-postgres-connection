@@ -25,17 +25,19 @@
 			user : 'postgres',
 		    	password : 'my_password', 
 		    	database : 'postgres'
-			
+		
 			por los datos correspondientes al propio usuario de base de datos.
 		
 		   line 36 -  Creación de la tabla Users:
 		   
-		   	Para el registro de usuarios en la base de datos, la aplicación requiere de la creación de la tabla 'users'.
-		   	Por un tema de seguridad, en la consulta se establece que se cree la tabla sólo en caso de que no exista:
+		   	Para el registro de usuarios en la base de datos, la aplicación requiere
+		   	de la creación de la tabla 'users'. Por un tema de seguridad, en la
+			consulta se establece que se cree la tabla sólo en caso de que no exista:
 		   	
 		   	CREATE TABLE IF NOT EXISTS users
 		   	
-		   	Por lo que en caso de posser una tabla con el mismo nombre, deberá eliminar ésta previamente.
+		   	Por lo que en caso de posser una tabla con el mismo nombre, deberá eliminar
+		   	ésta previamente.
 		   	
 
 		b. line 55 - Configuración del servicio SMTP de correo electrónico, modificar:
@@ -66,17 +68,20 @@
 		b. Explorer: http://127.0.0.1:3000
 
 
-* NOTA: Los datos ingresados en los formularios se validan mediante el módulo express-validator. En el cual se modificó la siguiente línea:
+* NOTA: Los datos ingresados en los formularios se validan mediante el módulo express-validator.
+	En el cual se modificó la siguiente línea:
 
-	conexion_postgres\node_modules\express-validator\node_modules\validator.js
+		conexion_postgres\node_modules\express-validator\node_modules\validator.js
 	
-	Line 68	-	 isAlphanumeric: function(str) {
+		Line 68	-	 isAlphanumeric: function(str) {
 	 				return (str.match(/^[a-zA-Z0-9]+$/));
 
-	por:
+		por:
 	  			isAlphanumeric: function(str) {
-        			return (!this.str.match(/^[a-zA-Z]+$/) &&
-                			!this.str.match(/^-?[0-9]+$/) &&
-                			!this.str == "");
+        				return (!this.str.match(/^[a-zA-Z]+$/) &&
+                				!this.str.match(/^-?[0-9]+$/) &&
+                				!this.str == "");
 
-    de modo de que la validación alfanumérica no sólo implique el uso de strings con números o letras sino que a su vez requiera que el string contenga al menos 1 número y 1 letra simultáneamente.
+    	De modo de que la validación alfanumérica no sólo implique el uso de strings con números
+    	o letras sino que a su vez requiera que el string contenga al menos 1 número y 1 letra
+    	simultáneamente.
