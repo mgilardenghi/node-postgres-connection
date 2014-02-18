@@ -30,14 +30,12 @@
 		
 		   line 36 -  Creación de la tabla Users:
 		   
-		   	Para el registro de usuarios en la base de datos, la aplicación requiere 
-		   	de la creación de la tabla 'users'. Por un tema de seguridad, en la 
-		   	consulta se establece que se cree la tabla sólo en caso de que no exista:
+		   	Para el registro de usuarios en la base de datos, la aplicación requiere de la creación de la tabla 'users'.
+		   	Por un tema de seguridad, en la consulta se establece que se cree la tabla sólo en caso de que no exista:
 		   	
 		   	CREATE TABLE IF NOT EXISTS users
 		   	
-		   	Por lo que en caso de posser una tabla con el mismo nombre, deberá
-		   	eliminar ésta previamente.
+		   	Por lo que en caso de posser una tabla con el mismo nombre, deberá eliminar ésta previamente.
 		   	
 
 		b. line 55 - Configuración del servicio SMTP de correo electrónico, modificar:
