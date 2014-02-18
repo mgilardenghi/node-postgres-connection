@@ -1,0 +1,72 @@
+/***************************************************************
+* 
+*  Parámetros a configurar previo a la ejecución de la 
+*  aplicación 'conexion_postgres'
+*
+****************************************************************
+
+
+* Requisitos previos de instalación:
+
+	- Para la correcta ejecución de la aplicación, se debe haber instalado previamente:
+
+		a. Node.js
+		b. Express
+		c. PostgreSQL
+
+
+* Configuración de la aplicación:
+
+	- /routes/config.js
+
+		a. line 19 - Configuración del cliente PostgreSQL, modificar:
+
+			host : 'localhost',
+		    user : 'postgres',
+		    password : 'my_password', 
+		    database : 'postgres'
+			
+			por los datos correspondientes al propio usuario de base de datos.
+
+		b. line 55 - Configuración del servicio SMTP de correo electrónico, modificar:
+		
+			auth: 
+		    {
+		      user: 'my_email_account',   
+		      pass: 'my_email_password'
+		    }
+
+			por los datos correspondientes a una cuenta propia de correo electrónico.
+
+
+* Ejecución de la aplicación
+	
+	- Instalación previa de módulos. Situarse en el directorio principal: /conexion_postgres
+	y ejecutar:
+
+		npm install
+
+	- Para correr la aplicación, en el directorio anterior ejecutar: 
+
+		node app.js
+
+	- Abrir el browser y tipear en la barra de direcciones:
+
+		a. Chrome: localhost:3000
+		b. Explorer: http://127.0.0.1:3000
+
+
+* NOTA: Los datos ingresados en los formularios se validan mediante el módulo express-validator. En el cual se modificó la siguiente línea:
+
+	conexion_postgres\node_modules\express-validator\node_modules\validator.js
+	
+	Line 68	-	 isAlphanumeric: function(str) {
+	 				return (str.match(/^[a-zA-Z0-9]+$/));
+
+	por:
+	  			isAlphanumeric: function(str) {
+        			return (!this.str.match(/^[a-zA-Z]+$/) &&
+                			!this.str.match(/^-?[0-9]+$/) &&
+                			!this.str == "");
+
+    de modo de que la validación alfanumérica no sólo implique el uso de strings con números o letras sino que a su vez requiera que el string contenga al menos 1 número y 1 letra simultáneamente.
