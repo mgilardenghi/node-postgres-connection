@@ -1,0 +1,25 @@
+
+/*******************************************************************
+*  
+*  Archivo de configuración que contiene las dependencias o
+*  módulos implementados por la aplicación web express. Para su
+*  correcta istalación, basta con ejecutar el comando 'npm install'
+*  antes de correr la aplicación con el comando 'node app.js'.
+*  
+********************************************************************/
+
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*",
+    "pg": "*",
+    "socket.io": "*",
+    "express-validator": "*"
+  }
+}

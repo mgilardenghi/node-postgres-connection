@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    
+  div.HomeContainer(align='center')
+
+    div.title
+      h1 #{title} <hr><br>
+    div.subtitle  
+      h2
+        b 
+          i Welcome to Express... <br><br> 
+    div.form
+      form(id='home', method='get')
+        input(id='register', type='submit', value='Register', style="height:40px; width:100px", onclick='redirect(this.id);')
+        br
+        br
+        input(id='signin', type='submit', value='Sign in', style="height:40px; width:100px", onclick='redirect(this.id);')
+
+    div.laundryImage    
+      img(src='../images/folded clothes.png', width='180', height='180')
+  
+  script(type='text/javascript').
+    var form = document.getElementById('home'); 
+    function redirect(id)
+    {
+      if(id=='register')
+        return form.action = '/register';
+      return form.action = '/signin';
+    };

@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  
+  div.container(align='center')
+
+    div.title
+      h1 My Express Web App <hr><br>
+    div.subtitle  
+      h2
+        b 
+          i Welcome to Express... <br><br>
+    div.form    
+      form(id='signout', action='/', method='get')
+        div.username
+          h2 
+            b
+              i #{user} <br>
+        div.button
+          input(id='submit', type='submit', value='Sign out', style="height:40px; width:100px")  
+    
+    div.laundryImage    
+      img(src='../images/folded clothes.png', width='180', height='180')

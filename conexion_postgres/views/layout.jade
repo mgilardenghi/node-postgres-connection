@@ -1,0 +1,38 @@
+doctype html
+  
+html 
+  
+  head
+
+    title= title   
+    link(size='200', rel='stylesheet', href='/stylesheets/style.css') 
+  
+  body
+
+    b Visitors:   
+      var(id='count')
+    hr  
+
+    script(type='text/javascript', src="/socket.io/socket.io.js")
+    script(type='text/javascript', src="../javascripts/clientCounter.js") 
+    
+    - function notEmpty(obj) {  
+    -   for (x in obj) {
+    -     return true;
+    -   }
+    -   return false;
+    - } 
+    
+    block content 
+    
+    br
+    div.errorMessage(style='color:#666600')
+      b #{message}
+    div.ninja
+      b Become a...
+          img(src='../images/ninja.png', height='90', width='90')     
+  
+  footer
+    p  Posted by: My Name &nbsp; | &nbsp; Contact information: 
+        a(href='mailto:') my_email@domain.com
+    p  Copyright 1999-2014 &nbsp; | &nbsp; Express.com &nbsp; | &nbsp; All rights reserved.

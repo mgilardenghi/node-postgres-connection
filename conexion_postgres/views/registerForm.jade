@@ -1,0 +1,61 @@
+extends layout
+
+block content
+  
+  div.title(align='center')
+    h1 #{title}  <hr>
+  
+  div.form
+    form(id='register', method='post')
+      fieldset
+        legend
+          b 
+            i Type your personal data <br><br>
+        
+        div.data(style='float:left')
+          div.firstName
+            Label First Name: <br>
+            input(name= 'firstname', type='text', size= 50)
+            br
+            br
+          div.lastName    
+            Label Last Name: <br>
+            input(name ='lastname', type= 'text', size= 50)
+            br
+            br
+          div.email   
+            Label Email: <br>
+            input(name= 'email', type='text', size= 50,
+            placeholder= 'Example:   my_name@mydomain.com')
+            br
+            br
+          div.password
+            Label Password: <br>
+            input(name= 'password', type= 'password', size= 50)
+            br
+            br
+          div.phoneNumber
+            Label Phone Number: <br>
+            input(name= 'phoneNumber', type= 'text', size= 50)
+            br
+            br
+          div.action
+            input(id= 'submitButton', type= 'submit', value= 'Submit')
+            input(id= 'resetButton' , type= 'reset', value= 'Reset')
+        
+        div.errors(align='left', style='color:#666600')
+          if(notEmpty(errors))
+            b Invalid input:
+              ul
+              each x in errors
+                li #{x.msg}
+  br
+  br
+  div.homeButton
+    a(href='/') 
+      img(src='../images/home_button.gif', width='130', height='45')                     
+  
+  script(type='text/javascript').
+    if(id=='register')
+      return form.action = '/register'; 
+    return form.action = '/signin';  

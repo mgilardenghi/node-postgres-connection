@@ -1,0 +1,55 @@
+
+/*******************************************************************
+*  
+
+/********************************************************************
+*
+*  Cascading Style Sheets. 
+*  Archivo de configuración global que contiene el formato y
+*  disposición de los componentes dentro de cada ruta.
+*  
+********************************************************************/
+
+body {
+  padding: 18px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:#F6F2E8;
+}
+
+a {
+  color: #8F825B;
+  text-decoration:none;
+}
+
+footer{
+  position: absolute;
+  height: 75px;
+  width: 100%; 
+  clear: both;
+  left: 0%;
+  right:0%;
+  bottom:0%;
+  text-align: center;
+  border-style:ridge;
+  color: #FFF;
+  background: #400000; 
+}
+
+
+div.homeButton{
+  position: absolute; 
+  bottom: 16%;
+  left:45%;
+}
+
+div.ninja {
+  position: absolute; 
+  bottom: 13%;
+  right:3%;
+}
+
+div.laundryImage {
+  position: absolute; 
+  bottom: 18%;
+  left: 44%;
+}
