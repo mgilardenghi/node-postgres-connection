@@ -2,7 +2,7 @@
 /*******************************************************************
 *
 *  Archivo que contiene las acciones a realizar por la aplicación
-*  en respuesta a una solitud POST de de cliente. 
+*  en respuesta a una solitud POST de un cliente. 
 *
 ********************************************************************/
 
